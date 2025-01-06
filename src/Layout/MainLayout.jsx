@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 const MainLayout = () => {
     return (
       <div>
-        <div className="sticky top-0 left-0 z-40 bg-white">
+        <div className="sticky top-0 left-0 z-40 bg-[var(--footer-color)]">
           <Header></Header>
         </div>
         <div className="min-h-[calc(100vh-290px)]">
