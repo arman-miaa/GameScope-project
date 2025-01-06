@@ -5,7 +5,7 @@ import { Tooltip } from "react-tooltip";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline"; 
 import { useTheme } from "../provider/ThemeProvider ";
 import userIcon from "../assets/user-icon.jpg";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 
@@ -49,7 +49,7 @@ const { theme, toggleTheme } = useTheme();
   );
 
   return (
-    <div className="navbar py-4 container text-[gray] mx-auto sticky top-0 left-0 z-40">
+    <div className="navbar py-4 container text-[gray] mx-auto ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

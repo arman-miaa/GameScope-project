@@ -5,6 +5,7 @@ import HighestRatedReviews from "../components/HighestRatedReviews ";
 import PopularGames from "../components/PopularGames";
 
 
+
 const Home = () => {
     return (
       <div className="container mx-auto py-8">
@@ -13,6 +14,7 @@ const Home = () => {
         </Helmet>
         <div>
           <Banner></Banner>
+         
           <HighestRatedReviews></HighestRatedReviews>
           
           <PopularGames></PopularGames>
