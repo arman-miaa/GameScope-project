@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Contact from "../components/Contact";
 import HighestRatedReviews from "../components/HighestRatedReviews ";
 import PopularGames from "../components/PopularGames";
+import AboutPlatform from "../components/AboutPlatform ";
 
 
 
@@ -18,6 +19,7 @@ const Home = () => {
           <HighestRatedReviews></HighestRatedReviews>
           
           <PopularGames></PopularGames>
+          <AboutPlatform></AboutPlatform>
           <Contact></Contact>
         </div>
       </div>

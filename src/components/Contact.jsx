@@ -25,7 +25,7 @@ const formRef = useRef();
 
 
   return (
-    <div className="text-white py-12">
+    <div id="contact" className="text-white py-12">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4 text-[var(--highlight)]">
           Stay Connected and Share Your Feedback

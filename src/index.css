@@ -58,4 +58,8 @@ html{
   overflow-y: scroll;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 

@@ -13,7 +13,7 @@ const Banner = () => {
      }
    };
   return (
-    <div>
+    <div id="home">
       <div className="carousel w-full">
         <div id="item1" className="relative carousel-item w-full">
           <img
