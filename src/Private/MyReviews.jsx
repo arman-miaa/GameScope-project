@@ -4,11 +4,14 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import Spinner from "../pages/Spinner";
 import { Helmet } from "react-helmet";
+import { useTheme } from "../provider/ThemeProvider "; 
 
 const MyReviews = () => {
   const { users } = useContext(AuthContext);
+  const { theme } = useTheme(); // Get the theme context (dark or light)
   const [myReviews, setMyReviews] = useState([]);
   const [loader, setLoader] = useState(true);
+
   useEffect(() => {
     fetch(
       `https://ph-assignment10-server-lilac.vercel.app/myreviews/${users?.email}`
@@ -59,52 +62,66 @@ const MyReviews = () => {
     });
   };
 
-
-
   return (
-    <section className="bg-[#1D1D1D] min-h-screen">
+    <section
+      className={`${
+        theme === "dark" ? "bg-[#1D1D1D] text-white" : "bg-white text-black"
+      } min-h-screen`}
+    >
       {loader ? (
-        <Spinner></Spinner>
+        <Spinner />
       ) : (
         <div className="container mx-auto px-4 py-12">
           <Helmet>
             <title>My Review Page || GameScope</title>
           </Helmet>
-          <h2 className="text-3xl font-bold text-center mb-6 text-[#ADFF00]">
+          <h2
+            className={`text-3xl font-bold text-center mb-6 ${
+              theme === "dark" ? "text-[#ADFF00]" : "text-[#1D1D1D]"
+            }`}
+          >
             My Reviews
           </h2>
           {myReviews.length > 0 ? (
             <div className="overflow-x-auto">
-              <table className="table-auto w-full border-collapse border border-gray-700 text-[#ADFF00] shadow-lg rounded-lg">
+              <table
+                className={`${
+                  theme === "dark"
+                    ? "bg-gray-800 text-[#ADFF00] border-gray-700"
+                    : "bg-white text-black border-gray-300"
+                } table-auto w-full border-collapse border text-sm shadow-lg rounded-lg`}
+              >
                 <thead>
-                  <tr className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white">
-                    <th className="px-4 py-3 border border-gray-700 text-left">
-                      #
-                    </th>
-                    <th className="px-4 py-3 border border-gray-700 text-left">
-                      Image
-                    </th>
-                    <th className="px-4 py-3 border border-gray-700 text-left">
-                      Name
-                    </th>
-                    <th className="px-4 py-3 border hidden md:flex border-gray-700 text-left">
+                  <tr
+                    className={`${
+                      theme === "dark"
+                        ? "bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white"
+                        : "bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 text-black"
+                    }`}
+                  >
+                    <th className="px-4 py-3 border text-left">#</th>
+                    <th className="px-4 py-3 border text-left">Image</th>
+                    <th className="px-4 py-3 border text-left">Name</th>
+                    <th className="px-4 py-3 border hidden md:flex text-left">
                       Genres
                     </th>
-                    <th className="px-4 py-3 border border-gray-700 text-left">
-                      Rating
-                    </th>
-                    <th className="px-4 py-3 border border-gray-700 text-left">
-                      Actions
-                    </th>
+                    <th className="px-4 py-3 border text-left">Rating</th>
+                    <th className="px-4 py-3 border text-left">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {myReviews.map((review, index) => (
                     <tr
                       key={review._id}
-                      className={`border-t border-gray-700 ${
-                        index % 2 === 0 ? "bg-gray-900" : "bg-gray-800"
-                      } hover:bg-gray-700`}
+                      className={`${
+                        index % 2 === 0
+                          ? theme === "dark"
+                            ? "bg-gray-900 hover:bg-gray-700"
+                            : "bg-gray-100 hover:bg-gray-200"
+                          : theme === "dark"
+                          ? "bg-gray-800 hover:bg-gray-700"
+                          : "bg-white hover:bg-gray-300"
+                      } `}
                     >
                       <td className="px-4 py-3">{index + 1}</td>
                       <td className="px-4 py-3">
@@ -115,25 +132,18 @@ const MyReviews = () => {
                         />
                       </td>
                       <td className="px-4 py-3">{review.title}</td>
-                      <td className="px-4 py-3 hidden  md:flex mt-4">
+                      <td className="px-4 py-3 hidden md:flex">
                         {review.genres}
                       </td>
                       <td className="px-4 py-3">{review.rating}/10</td>
-                      <td className="px-4 py-3 flex flex-col items-center  md:flex-row space-x-2 space-y-2 md:space-y-0">
+                      <td className="px-4 py-3 flex flex-col items-center md:flex-row space-x-2 space-y-2 md:space-y-0">
                         <Link to={`/getReview/${review._id}`}>
-                          <button
-                            // onClick={() => {
-                            //   handleUpdateReview(review._id);
-                            // }}
-                            className="w-20 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 shadow"
-                          >
+                          <button className="w-20 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 shadow">
                             Update
                           </button>
                         </Link>
                         <button
-                          onClick={() => {
-                            handleRemoveReview(review._id);
-                          }}
+                          onClick={() => handleRemoveReview(review._id)}
                           className="w-20 py-2 text-sm bg-red-500 text-white rounded-lg hover:bg-red-600 shadow"
                         >
                           Delete

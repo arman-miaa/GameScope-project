@@ -2,8 +2,11 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext } from "react";
 import { Helmet } from "react-helmet";
+import { useTheme } from "../provider/ThemeProvider ";
 
 const AddReview = () => {
+    const { theme } = useTheme();
+
   const { users } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,12 +51,16 @@ const AddReview = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1D1D1D] text-white flex items-center justify-center py-12 px-4">
+    <div
+      className={`${
+        theme === "dark" ? "bg-[#1D1D1D]" : "bg-gray-200"
+      } min-h-screen   text-white flex items-center justify-center py-12 px-4`}
+    >
       <Helmet>
         <title>Add Review Page || GameScope</title>
       </Helmet>
-      <div className="max-w-3xl w-full">
-        <h2 className="text-3xl font-bold text-center text-[#ADFF00] mb-6">
+      <div className={`max-w-3xl w-full`}>
+        <h2 className="text-3xl font-bold text-center text-[var(--highlight)] mb-6">
           Add New Review
         </h2>
         <form
@@ -64,7 +71,7 @@ const AddReview = () => {
           <div>
             <label
               htmlFor="coverImage"
-              className="block text-sm font-medium text-[#ADFF00] mb-2"
+              className="block text-sm font-medium text-[var(--highlight)] mb-2"
             >
               Game Cover Image/Thumbnail
             </label>
@@ -74,7 +81,7 @@ const AddReview = () => {
               name="image"
               required
               placeholder="Enter image URL"
-              className="w-full border border-gray-500 bg-[#1D1D1D] text-white rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
+              className="w-full border border-gray-500 bg-[var(--bg-color)] text-[var(--text-color)] rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
             />
           </div>
 
@@ -82,7 +89,7 @@ const AddReview = () => {
           <div>
             <label
               htmlFor="gameTitle"
-              className="block text-sm font-medium text-[#ADFF00] mb-2"
+              className="block text-sm font-medium text-[var(--highlight)] mb-2"
             >
               Game Title/Name
             </label>
@@ -92,7 +99,7 @@ const AddReview = () => {
               name="title"
               required
               placeholder="Enter game title"
-              className="w-full border border-gray-500 bg-[#1D1D1D] text-white rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
+              className="w-full border border-gray-500 bg-[var(--bg-color)] text-[var(--text-color)] rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
             />
           </div>
 
@@ -100,7 +107,7 @@ const AddReview = () => {
           <div className="md:col-span-2">
             <label
               htmlFor="reviewDescription"
-              className="block text-sm font-medium text-[#ADFF00] mb-2"
+              className="block text-sm font-medium text-[var(--highlight)] mb-2"
             >
               Review Description
             </label>
@@ -110,7 +117,7 @@ const AddReview = () => {
               rows="4"
               required
               placeholder="Write your review here..."
-              className="w-full border resize-none border-gray-500 bg-[#1D1D1D] text-white rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
+              className="w-full border resize-none border-gray-500 bg-[var(--bg-color)] text-[var(--text-color)] rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
             ></textarea>
           </div>
 
@@ -118,7 +125,7 @@ const AddReview = () => {
           <div>
             <label
               htmlFor="rating"
-              className="block text-sm font-medium text-[#ADFF00] mb-2"
+              className="block text-sm font-medium text-[var(--highlight)] mb-2"
             >
               Rating (1-10)
             </label>
@@ -130,7 +137,7 @@ const AddReview = () => {
               max="10"
               required
               placeholder="Enter rating (1-10)"
-              className="w-full border border-gray-500 bg-[#1D1D1D] text-white rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
+              className="w-full border border-gray-500 bg-[var(--bg-color)] text-[var(--text-color)]rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
             />
           </div>
 
@@ -138,7 +145,7 @@ const AddReview = () => {
           <div>
             <label
               htmlFor="publishingYear"
-              className="block text-sm font-medium text-[#ADFF00] mb-2"
+              className="block text-sm font-medium text-[var(--highlight)] mb-2"
             >
               Publishing Year
             </label>
@@ -150,7 +157,7 @@ const AddReview = () => {
               max="2024"
               required
               placeholder="Enter year (e.g., 2024)"
-              className="w-full border border-gray-500 bg-[#1D1D1D] text-white rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
+              className="w-full border border-gray-500 bg-[var(--bg-color)] text-[var(--text-color)] rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
             />
           </div>
 
@@ -158,14 +165,14 @@ const AddReview = () => {
           <div>
             <label
               htmlFor="genres"
-              className="block text-sm font-medium text-[#ADFF00] mb-2"
+              className="block text-sm font-medium text-[var(--highlight)] mb-2"
             >
               Genres
             </label>
             <select
               id="genres"
               name="genres"
-              className="w-full border border-gray-500 bg-[#1D1D1D] text-white rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
+              className="w-full border border-gray-500 bg-[var(--bg-color)] text-[var(--text-color)] rounded-lg p-2 focus:border-[#ADFF00] focus:ring-[#ADFF00]"
             >
               <option value="Action">Action</option>
               <option value="RPG">RPG</option>
@@ -177,7 +184,7 @@ const AddReview = () => {
           <div>
             <label
               htmlFor="userEmail"
-              className="block text-sm font-medium text-[#ADFF00] mb-2"
+              className="block text-sm font-medium text-[var(--highlight)] mb-2"
             >
               User Email
             </label>
@@ -187,7 +194,7 @@ const AddReview = () => {
               name="email"
               value={users?.email || "exampl@gmail.com"}
               readOnly
-              className="w-full border border-gray-500 bg-[#1D1D1D] text-gray-400 rounded-lg p-2 cursor-not-allowed"
+              className="w-full border border-gray-500 bg-[var(--bg-color)] text-[var(--text-color)] rounded-lg p-2 cursor-not-allowed"
             />
           </div>
 
@@ -195,7 +202,7 @@ const AddReview = () => {
           <div>
             <label
               htmlFor="userName"
-              className="block text-sm font-medium text-[#ADFF00] mb-2"
+              className="block text-sm font-medium text-[var(--highlight)] mb-2"
             >
               User Name
             </label>
@@ -205,7 +212,7 @@ const AddReview = () => {
               name="name"
               defaultValue={users?.displayName || "user name"}
               readOnly
-              className="w-full border border-gray-500 bg-[#1D1D1D] text-gray-400 rounded-lg p-2 cursor-not-allowed"
+              className="w-full border border-gray-500 bg-[var(--bg-color)] text-[var(--text-color)] rounded-lg p-2 cursor-not-allowed"
             />
           </div>
 
