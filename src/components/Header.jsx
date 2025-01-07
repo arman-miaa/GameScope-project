@@ -39,15 +39,19 @@ const { theme, toggleTheme } = useTheme();
       <li>
         <NavLink to="/aboutUs">About Us</NavLink>
       </li>
-      <li>
-        <NavLink to="/addReview">Add Review</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myReviews">My Reviews</NavLink>
-      </li>
-      <li>
-        <NavLink to="/gameWatchList">My WatchList</NavLink>
-      </li>
+      {users && (
+        <>
+          <li>
+            <NavLink to="/addReview">Add Review</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myReviews">My Reviews</NavLink>
+          </li>
+          <li>
+            <NavLink to="/gameWatchList">My WatchList</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 

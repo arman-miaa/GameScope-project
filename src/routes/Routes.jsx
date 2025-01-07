@@ -33,7 +33,7 @@ const router = createBrowserRouter([
           fetch("https://ph-assignment10-server-lilac.vercel.app/reviews"),
       },
       {
-        path: 'aboutUs',
+        path: "aboutUs",
         element: <AboutUs></AboutUs>,
       },
       {
@@ -50,12 +50,9 @@ const router = createBrowserRouter([
           fetch(
             `https://ph-assignment10-server-lilac.vercel.app/reviews/${params.id}`
           ),
-        element: (
-          <Private>
-            <ReviewsDetails></ReviewsDetails>
-          </Private>
-        ),
+        element: <ReviewsDetails></ReviewsDetails>,
       },
+
       {
         path: "myReviews",
         element: (

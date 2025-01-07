@@ -83,7 +83,7 @@ const AboutUs = () => {
        
       </div>
       <section
-        className={`why-choose-us py-16 ${
+        className={`why-choose-us py-12 mt-16 ${
           theme === "dark"
             ? "bg-[#1E1E1E] text-white"
             : "bg-gray-100 text-gray-900"
