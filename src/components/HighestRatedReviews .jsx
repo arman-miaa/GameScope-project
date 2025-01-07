@@ -4,6 +4,7 @@ import Spinner from "../pages/Spinner";
 
 const HighestRatedReviews = () => {
   const [reviews, setReviews] = useState([]); 
+  
   const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
@@ -22,8 +23,8 @@ const HighestRatedReviews = () => {
 
   return (
     <div>
-      {loading ? ( 
-      <Spinner></Spinner>
+      {loading ? (
+        <Spinner></Spinner>
       ) : (
         <div>
           <div id="top" className="text-center mb-8 mt-12">
@@ -48,10 +49,11 @@ const HighestRatedReviews = () => {
                     />
                   </figure>
                   <div className="flex flex-col flex-grow mt-4 text-[var(--text-color)] ">
-                    <h2 className="text-3xl font-bold">{review.title}</h2>
+                    <h2 className="text-2xl font-semibold">{review.title}</h2>
                     <p className="text-2xl mt-2">Genres: {review.genres}</p>
-                    <p className="text-2xl mt-2">
-                      Rating: {review.rating} / 10 ⭐
+                    <p className=" mt-2 text-justify">
+                      {/* Rating: {review.rating} / 10 ⭐ */}
+                      {review.review.slice(0, 80)}...
                     </p>
                     <div className="mt-auto">
                       <Link to={`/reviewsDetails/${review._id}`}>

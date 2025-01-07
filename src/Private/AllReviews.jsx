@@ -104,11 +104,12 @@ const AllReviews = () => {
                       alt={review.title}
                     />
                   </figure>
-                  <div className="card-body text-white">
-                    <h2 className="card-title">{review.title}</h2>
-                    <p>Genres: {review.genres}</p>
-                    <p>Publishing year: {review.year}</p>
-                    <p>Rating: {review.rating}/10⭐</p>
+                  <div className=" mt-4 text-white">
+                    <h2 className=" text-2xl font-semibold">{review.title}</h2>
+                    <p className="text-xl mt-2">Genres: {review.genres}</p>
+                    {/* <p>Publishing year: {review.year}</p> */}
+                    {/* <p>Rating: {review.rating}/10⭐</p> */}
+                    <p className="mt-2 text-justify">{review.review.slice(0, 80)}...</p>
                     <div className="card-actions justify-end mt-2">
                       <Link to={`/reviewsDetails/${review._id}`}>
                         <button className="btn bg-[#ADFF00] hover:bg-[#8ac214] border-none text-black">

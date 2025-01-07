@@ -4,6 +4,10 @@
 
 ---
 
+## 📂 Server Repository
+
+- 💻 **Server Repo**: [GitHub Repository](https://github.com/arman-miaa/GameScope-Project-server)  ![GitHub Repo](https://img.shields.io/github/stars/arman-miaa/GameScope-Project-server?style=social)
+
 ## 🚀 Key Features
 - 🔐 **User Authentication**: Secure sign-up, login, and logout functionality.
 - ✍️ **Game Reviews**: Add, update, delete, and manage your reviews.
@@ -27,5 +31,5 @@
 
 ## 🌐 Live Links
 
-- 🌍 **Netlify Live Link**: 👉 [https://ph-assignment-10-client.netlify.app/](https://ph-assignment-10-client.netlify.app/)
-- 🔥 **Firebase Live Link**: 👉 [https://ph-assignment-10-35fcc.web.app](https://ph-assignment-10-35fcc.web.app)
+- 🌍 **Netlify Live Link**: 👉 [https://gamescope-project.netlify.app/](https://gamescope-project.netlify.app/)
+
