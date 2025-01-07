@@ -6,7 +6,7 @@
 
 ## 📂 Server Repository
 
-- 💻 **Server Repo**: [GitHub Repository](https://github.com/arman-miaa/GameScope-Project-server)  ![GitHub Repo](https://img.shields.io/github/stars/arman-miaa/GameScope-Project-server?style=social)
+- 💻 **Server Repo**: [GitHub Repository Link](https://github.com/arman-miaa/GameScope-Project-server)
 
 ## 🚀 Key Features
 - 🔐 **User Authentication**: Secure sign-up, login, and logout functionality.
