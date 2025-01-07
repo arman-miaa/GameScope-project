@@ -14,6 +14,7 @@ import ReviewsDetails from "../Private/ReviewsDetails";
 import UpdateReview from "../Private/UpdateReview";
 import MyWatchList from "../Private/MyWatchList";
 import Private from "../Private/Private";
+import AboutUs from "../pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         element: <AllReviews></AllReviews>,
         loader: () =>
           fetch("https://ph-assignment10-server-lilac.vercel.app/reviews"),
+      },
+      {
+        path: 'aboutUs',
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "addReview",

@@ -37,6 +37,9 @@ const { theme, toggleTheme } = useTheme();
         <NavLink to="/allReviews">All Reviews</NavLink>
       </li>
       <li>
+        <NavLink to="/aboutUs">About Us</NavLink>
+      </li>
+      <li>
         <NavLink to="/addReview">Add Review</NavLink>
       </li>
       <li>

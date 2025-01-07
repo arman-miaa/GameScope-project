@@ -29,14 +29,19 @@ const Footer = () => {
             <a href="/#home" className="link link-hover">
               Home
             </a>
-            <a href="/#contact" className="link link-hover">
-              Contact
-            </a>
+          
 
             <Link to="/allReviews" className="link link-hover">
               All Reviews
             </Link>
-            <a className="link link-hover">Press kit</a>
+
+            <Link to="/aboutUs" className="link link-hover">
+              About Us
+            </Link>
+            <Link to="/signup" className="link link-hover">
+              Register
+            </Link>
+           
           </nav>
 
           <div className="mx-auto lg:mx-0">
